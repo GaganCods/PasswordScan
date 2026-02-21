@@ -79,6 +79,20 @@
 }
 
 /* ── 2. RESET ──────────────────────────────────────────────── */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Remove tap highlight only where needed */
+a,
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
 *,
 *::before,
 *::after {
@@ -2060,4 +2074,5 @@ h6 {
         border-radius: 16px;
         padding: var(--space-8) var(--space-5);
     }
+
 }
