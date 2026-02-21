@@ -1,0 +1,607 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO -->
+    <title>Password Strength Checker – Free & Secure | PasswordScan</title>
+    <meta name="description"
+        content="Check your password strength instantly. Free, secure, and 100% client-side — your password never leaves your browser. Get a score, crack time estimate, and improvement tips.">
+    <link rel="canonical" href="https://passwordscan.vercel.app/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://passwordscan.vercel.app/">
+    <meta property="og:title" content="Password Strength Checker – Free & Secure | PasswordScan">
+    <meta property="og:description"
+        content="Check your password strength instantly. Free, secure, and 100% client-side — your password never leaves your browser.">
+    <meta property="og:image" content="https://passwordscan.vercel.app/assets/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="PasswordScan">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Password Strength Checker – Free & Secure | PasswordScan">
+    <meta name="twitter:description"
+        content="100% client-side password strength checker. Score, crack time, and actionable tips. Your password never leaves your browser.">
+    <meta name="twitter:image" content="https://passwordscan.vercel.app/assets/og-image.jpg">
+
+    <!-- Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔐</text></svg>">
+
+    <!-- JSON-LD: WebApplication -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "PasswordScan",
+    "url": "https://passwordscan.vercel.app/",
+    "description": "Free, privacy-first password strength checker. Analyzes passwords entirely in your browser with no data transmission.",
+    "applicationCategory": "SecurityApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "Real-time password strength analysis",
+      "Crack time estimation",
+      "Improvement suggestions",
+      "100% client-side — no data stored"
+    ]
+  }
+  </script>
+
+    <!-- JSON-LD: FAQPage -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is my password stored or sent anywhere?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. PasswordScan runs entirely in your browser using JavaScript. Your password is never sent to any server, stored in any database, or transmitted over the internet. Everything happens locally on your device."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is the password strength score calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The score (0–100) is calculated by analyzing: password length, presence of uppercase and lowercase letters, numbers, and symbols, character variety, entropy, and penalties for common passwords, sequential patterns (like 'abc' or '123'), keyboard patterns (like 'qwerty'), and repeated characters."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What makes a password strong?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A strong password has at least 12–16 characters and uses a mix of uppercase letters, lowercase letters, numbers, and special symbols. It avoids dictionary words, common patterns, and personal information like your name or birthday."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does the crack time estimate mean?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The crack time is an estimate of how long it would take a powerful computer making 10 billion guesses per second to crack your password. This is based on the password's entropy — the mathematical measure of randomness and unpredictability."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I use a password manager?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Password managers like Bitwarden, 1Password, and Dashlane help you create and store strong, unique passwords for every account. This is the single most effective way to improve your password security."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+    <div id="header"></div>
+
+    <main id="main-content">
+
+        <!-- ── HERO ──────────────────────────────────────────────── -->
+        <section class="hero" aria-labelledby="hero-heading">
+            <div class="container">
+                <div class="hero-badge" aria-label="Privacy guarantee">
+                    <span aria-hidden="true">🔒</span> 100% Private — Runs in Your Browser
+                </div>
+
+                <h1 id="hero-heading">
+                    Password Strength Checker<br>
+                    <span class="highlight">Free &amp; Secure</span>
+                </h1>
+
+                <p class="hero-subtitle">
+                    Instantly check how strong your password is. No sign-up, no servers, no tracking.
+                    Your password <strong>never leaves your device</strong>.
+                </p>
+
+                <div class="trust-badges" aria-label="Trust indicators">
+                    <span class="trust-badge"><span aria-hidden="true">✅</span> No Data Stored</span>
+                    <span class="trust-badge"><span aria-hidden="true">⚡</span> Real-Time Analysis</span>
+                    <span class="trust-badge"><span aria-hidden="true">🆓</span> Completely Free</span>
+                    <span class="trust-badge"><span aria-hidden="true">🌐</span> Works Offline</span>
+                </div>
+
+                <div class="hero-cta" style="margin-top:var(--space-8);display:flex;justify-content:center;">
+                    <a href="#tool-section" class="btn btn-primary btn-lg" id="hero-check-btn">
+                        🔐 Check Your Password Now
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── TOOL ───────────────────────────────────────────────── -->
+        <section class="tool-section" id="tool-section" aria-labelledby="tool-heading">
+            <div class="container">
+                <div class="tool-card">
+                    <h2 id="tool-heading" class="visually-hidden">Password Strength Checker Tool</h2>
+
+                    <!-- Password Input -->
+                    <label for="password-input" class="input-label">
+                        Enter your password to check its strength
+                    </label>
+                    <div class="input-wrapper">
+                        <input type="password" id="password-input" class="password-input"
+                            placeholder="Type your password here…" autocomplete="new-password" spellcheck="false"
+                            autocorrect="off" autocapitalize="none" aria-describedby="strength-announce"
+                            maxlength="128">
+                        <div class="input-actions">
+                            <button class="icon-btn" id="toggle-visibility" aria-label="Show password" type="button">
+                                <!-- injected by ui-controller.js -->
+                            </button>
+                            <button class="icon-btn" id="copy-btn" aria-label="Copy password to clipboard"
+                                type="button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" aria-hidden="true">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- ARIA Live Region -->
+                    <div id="strength-announce" class="visually-hidden" role="status" aria-live="polite"
+                        aria-atomic="true"></div>
+
+                    <!-- Strength Meter -->
+                    <div class="meter-section">
+                        <div class="meter-header">
+                            <span id="strength-label" class="strength-label-text" aria-hidden="true">Enter a
+                                password</span>
+                            <span id="score-badge" class="score-badge" aria-hidden="true">—</span>
+                        </div>
+                        <div class="meter-track" role="progressbar" aria-valuenow="0" aria-valuemin="0"
+                            aria-valuemax="100" aria-label="Password strength">
+                            <div class="meter-fill" id="meter-fill"></div>
+                        </div>
+                    </div>
+
+                    <!-- Score Grid -->
+                    <div class="score-grid" aria-label="Password analysis breakdown">
+                        <div class="score-card">
+                            <div class="score-card-label">Length</div>
+                            <div class="score-card-value" id="card-length">—</div>
+                            <div class="score-card-sub">characters</div>
+                        </div>
+                        <div class="score-card">
+                            <div class="score-card-label">Character Types</div>
+                            <div class="score-card-value" id="card-variety">—</div>
+                            <div class="score-card-sub">out of 4 categories</div>
+                        </div>
+                        <div class="score-card">
+                            <div class="score-card-label">Entropy</div>
+                            <div class="score-card-value" id="card-entropy">—</div>
+                            <div class="score-card-sub">bits of randomness</div>
+                        </div>
+                        <div class="score-card">
+                            <div class="score-card-label">Crack Time</div>
+                            <div class="score-card-value" id="card-crack-time" style="font-size:var(--text-base)">—
+                            </div>
+                            <div class="score-card-sub">at 10B guesses/sec</div>
+                        </div>
+                    </div>
+
+                    <!-- Factor Checklist -->
+                    <div class="factors-list" aria-label="Password requirements checklist">
+                        <div class="factor-item" id="factor-length">
+                            <div class="factor-indicator" aria-hidden="true"></div>
+                            <span class="factor-label">Length ≥ 12 characters</span>
+                            <span class="factor-status" aria-hidden="true"></span>
+                        </div>
+                        <div class="factor-item" id="factor-upper">
+                            <div class="factor-indicator" aria-hidden="true"></div>
+                            <span class="factor-label">Uppercase letters (A–Z)</span>
+                            <span class="factor-status" aria-hidden="true"></span>
+                        </div>
+                        <div class="factor-item" id="factor-lower">
+                            <div class="factor-indicator" aria-hidden="true"></div>
+                            <span class="factor-label">Lowercase letters (a–z)</span>
+                            <span class="factor-status" aria-hidden="true"></span>
+                        </div>
+                        <div class="factor-item" id="factor-numbers">
+                            <div class="factor-indicator" aria-hidden="true"></div>
+                            <span class="factor-label">Numbers (0–9)</span>
+                            <span class="factor-status" aria-hidden="true"></span>
+                        </div>
+                        <div class="factor-item" id="factor-symbols">
+                            <div class="factor-indicator" aria-hidden="true"></div>
+                            <span class="factor-label">Special characters (!@#$…)</span>
+                            <span class="factor-status" aria-hidden="true"></span>
+                        </div>
+                        <div class="factor-item" id="factor-common">
+                            <div class="factor-indicator" aria-hidden="true"></div>
+                            <span class="factor-label">Not a common password</span>
+                            <span class="factor-status" aria-hidden="true"></span>
+                        </div>
+                        <div class="factor-item" id="factor-sequence">
+                            <div class="factor-indicator" aria-hidden="true"></div>
+                            <span class="factor-label">No sequential patterns (abc, 123)</span>
+                            <span class="factor-status" aria-hidden="true"></span>
+                        </div>
+                        <div class="factor-item" id="factor-keyboard">
+                            <div class="factor-indicator" aria-hidden="true"></div>
+                            <span class="factor-label">No keyboard patterns (qwerty)</span>
+                            <span class="factor-status" aria-hidden="true"></span>
+                        </div>
+                    </div>
+
+                    <!-- Suggestions Panel -->
+                    <div class="suggestions-panel" id="suggestions-panel" aria-live="polite">
+                        <div class="suggestions-header">
+                            <span aria-hidden="true">💡</span> How to improve your password
+                        </div>
+                        <ul class="suggestions-list" id="suggestions-list"
+                            aria-label="Password improvement suggestions"></ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ── FEATURES ───────────────────────────────────────────── -->
+        <section class="features-section" id="features-section" aria-labelledby="features-heading">
+            <div class="container">
+                <div class="features-outer">
+
+                    <!-- Section header -->
+                    <div class="features-section-header">
+                        <span class="features-eyebrow">Why PasswordScan</span>
+                        <h2 class="features-title" id="features-heading">Built for Privacy &amp; Precision</h2>
+                        <p class="features-subtitle">Everything you need to evaluate password strength — with zero risk
+                            to your data.</p>
+                        <div class="features-divider" aria-hidden="true"></div>
+                    </div>
+
+                    <!-- Cards grid -->
+                    <div class="features-grid" role="list">
+
+                        <article class="feature-card" role="listitem" tabindex="0">
+                            <div class="fc-icon-wrap fc-blue" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" />
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                                </svg>
+                            </div>
+                            <h3 class="fc-title">100% Private</h3>
+                            <p class="fc-desc">Your password never leaves your device. Analysis runs entirely in your
+                                browser — no server, no logs, no tracking.</p>
+                        </article>
+
+                        <article class="feature-card" role="listitem" tabindex="0">
+                            <div class="fc-icon-wrap fc-green" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                                </svg>
+                            </div>
+                            <h3 class="fc-title">Real-Time Analysis</h3>
+                            <p class="fc-desc">Score updates instantly as you type — no button clicks, no loading
+                                spinners, no waiting at all.</p>
+                        </article>
+
+                        <article class="feature-card" role="listitem" tabindex="0">
+                            <div class="fc-icon-wrap fc-purple" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M12 16v-4M12 8h.01" />
+                                </svg>
+                            </div>
+                            <h3 class="fc-title">Smart Scoring Engine</h3>
+                            <p class="fc-desc">Checks length, entropy, character variety, common passwords, sequential
+                                and keyboard patterns.</p>
+                        </article>
+
+                        <article class="feature-card" role="listitem" tabindex="0">
+                            <div class="fc-icon-wrap fc-orange" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z" />
+                                    <path d="M12 6v6l4 2" />
+                                </svg>
+                            </div>
+                            <h3 class="fc-title">Works Offline</h3>
+                            <p class="fc-desc">No internet needed. The entire engine is pure JavaScript — disconnect and
+                                it still works perfectly.</p>
+                        </article>
+
+                        <article class="feature-card" role="listitem" tabindex="0">
+                            <div class="fc-icon-wrap fc-teal" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="18" y1="20" x2="18" y2="10" />
+                                    <line x1="12" y1="20" x2="12" y2="4" />
+                                    <line x1="6" y1="20" x2="6" y2="14" />
+                                </svg>
+                            </div>
+                            <h3 class="fc-title">Detailed Breakdown</h3>
+                            <p class="fc-desc">Score, crack time estimate, entropy in bits, character variety, and a
+                                full pass/fail security checklist.</p>
+                        </article>
+
+                        <article class="feature-card" role="listitem" tabindex="0">
+                            <div class="fc-icon-wrap fc-pink" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                            </div>
+                            <h3 class="fc-title">Always Free</h3>
+                            <p class="fc-desc">No sign-up, no paywall, no premium tier. Open source and free to use
+                                forever — for everyone.</p>
+                        </article>
+
+                    </div><!-- /features-grid -->
+                </div><!-- /features-outer -->
+            </div><!-- /container -->
+        </section>
+
+        <!-- ── FAQ ────────────────────────────────────────────────── -->
+        <section class="section faq-section" id="faq" aria-labelledby="faq-heading">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-label">FAQ</div>
+                    <h2 class="section-title" id="faq-heading">Frequently Asked Questions</h2>
+                    <p class="section-desc">Everything you need to know about password strength and how our checker
+                        works.</p>
+                </div>
+
+                <div class="faq-list" role="list">
+
+                    <div class="faq-item" role="listitem">
+                        <button class="faq-question" aria-expanded="false">
+                            Is my password stored or sent anywhere?
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                aria-hidden="true">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                No. PasswordScan runs entirely in your browser using JavaScript. Your password is
+                                <strong>never sent to any server</strong>, stored in any database, or transmitted over
+                                the internet. Everything happens locally on your device. You can even disconnect from
+                                the internet and the tool will still work.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" role="listitem">
+                        <button class="faq-question" aria-expanded="false">
+                            How is the password strength score calculated?
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                aria-hidden="true">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                The score (0–100) analyzes: password length (longer = better), character variety
+                                (uppercase, lowercase, numbers, symbols), mathematical entropy (bits of randomness), and
+                                applies penalties for common passwords, sequential patterns like "abc" or "123",
+                                keyboard patterns like "qwerty", and repeated characters.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" role="listitem">
+                        <button class="faq-question" aria-expanded="false">
+                            What makes a password strong?
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                aria-hidden="true">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                A strong password has <strong>at least 12–16 characters</strong> and uses a mix of
+                                uppercase letters (A–Z), lowercase letters (a–z), numbers (0–9), and special symbols
+                                (!@#$%). It avoids dictionary words, common patterns, and personal information like your
+                                name or birthday.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" role="listitem">
+                        <button class="faq-question" aria-expanded="false">
+                            What does the crack time estimate mean?
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                aria-hidden="true">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                The crack time estimates how long it would take a powerful computer making <strong>10
+                                    billion guesses per second</strong> to crack your password through brute force. This
+                                is based on the password's entropy — the mathematical measure of unpredictability. A
+                                password taking "centuries" to crack is considered very secure.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" role="listitem">
+                        <button class="faq-question" aria-expanded="false">
+                            What is password entropy?
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                aria-hidden="true">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                Entropy, measured in bits, quantifies how unpredictable a password is. It's calculated
+                                from the size of the character set used and the length of the password. A password with
+                                60+ bits of entropy is generally considered strong. For example, a 16-character password
+                                using all four character types has around 104 bits of entropy.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" role="listitem">
+                        <button class="faq-question" aria-expanded="false">
+                            Should I use a password manager?
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                aria-hidden="true">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                Absolutely. Password managers like <strong>Bitwarden</strong> (free & open source),
+                                1Password, and Dashlane help you create and securely store unique, strong passwords for
+                                every account. This is the single most effective step you can take to improve your
+                                online security. <a href="/blog/is-password-manager-safe/" class="text-primary">Read: Is
+                                    a password manager safe?</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" role="listitem">
+                        <button class="faq-question" aria-expanded="false">
+                            How often should I change my password?
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                aria-hidden="true">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                Modern security guidelines (from NIST) no longer recommend changing passwords on a fixed
+                                schedule. Instead, change your password if: you suspect a breach, you've been notified
+                                of a data leak, or you've used the same password on multiple sites. Use a <a
+                                    href="/blog/is-password-manager-safe/" class="text-primary">password manager</a> to
+                                use unique passwords everywhere.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" role="listitem">
+                        <button class="faq-question" aria-expanded="false">
+                            Is a longer password always better?
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                aria-hidden="true">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                Yes — length is the single most impactful factor in password strength. A 20-character
+                                password using only lowercase letters is often stronger than a 10-character password
+                                with all four character types. Ideally, aim for both length <em>and</em> variety. A 16+
+                                character password mixing all types is extremely strong.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ── RELATED ARTICLES ───────────────────────────────────── -->
+        <section class="section articles-section" aria-labelledby="articles-heading">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-label">Learn More</div>
+                    <h2 class="section-title" id="articles-heading">Password Security Guides</h2>
+                    <p class="section-desc">Deep-dive articles to help you stay secure online.</p>
+                </div>
+
+                <div class="articles-grid">
+                    <a href="/blog/how-to-create-strong-password/" class="article-card">
+                        <div class="article-tag">Guide</div>
+                        <div class="article-title">How to Create a Strong Password in 2025</div>
+                        <p class="article-excerpt">Learn the exact formula for creating passwords that are both strong
+                            and memorable — without needing to write them down.</p>
+                        <div class="article-link">Read guide <span aria-hidden="true">→</span></div>
+                    </a>
+
+                    <a href="/blog/password-security-best-practices/" class="article-card">
+                        <div class="article-tag">Best Practices</div>
+                        <div class="article-title">Password Security Best Practices for 2025</div>
+                        <p class="article-excerpt">A comprehensive checklist of everything you need to do to properly
+                            secure your accounts and personal data online.</p>
+                        <div class="article-link">Read guide <span aria-hidden="true">→</span></div>
+                    </a>
+
+                    <a href="/blog/common-password-mistakes/" class="article-card">
+                        <div class="article-tag">Mistakes</div>
+                        <div class="article-title">10 Common Password Mistakes You're Probably Making</div>
+                        <p class="article-excerpt">From "123456" to password reuse — discover the most dangerous
+                            password habits and how to fix them today.</p>
+                        <div class="article-link">Read guide <span aria-hidden="true">→</span></div>
+                    </a>
+
+                    <a href="/blog/is-password-manager-safe/" class="article-card">
+                        <div class="article-tag">Tools</div>
+                        <div class="article-title">Is a Password Manager Safe? Complete 2025 Guide</div>
+                        <p class="article-excerpt">Everything you need to know about how password managers work, whether
+                            they're safe, and which ones to trust.</p>
+                        <div class="article-link">Read guide <span aria-hidden="true">→</span></div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="js/components-loader.js"></script>
+
+    <script type="module" src="js/ui-controller.js"></script>
+</body>
+
+</html>

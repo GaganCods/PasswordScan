@@ -1,0 +1,8 @@
+﻿User-agent: *
+Allow: /
+
+# Noindex pages — still allow crawling for link equity
+Disallow: /privacy-policy/
+Disallow: /license/
+
+Sitemap: https://passwordscan.vercel.app/sitemap.xml

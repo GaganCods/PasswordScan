@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO -->
+    <title>Password Security Blog – Tips, Guides & Best Practices | PasswordScan</title>
+    <meta name="description"
+        content="Expert password security guides: how to create strong passwords, best practices, common mistakes, and whether password managers are safe. Free resources from PasswordScan.">
+    <link rel="canonical" href="https://passwordscan.vercel.app/blog/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://passwordscan.vercel.app/blog/">
+    <meta property="og:title" content="Password Security Blog – Tips & Guides | PasswordScan">
+    <meta property="og:description"
+        content="Expert guides on password security, best practices, and how to stay protected online.">
+    <meta property="og:image" content="https://passwordscan.vercel.app/assets/og-image.jpg">
+    <meta property="og:site_name" content="PasswordScan">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Password Security Blog | PasswordScan">
+    <meta name="twitter:description" content="Expert guides on password security, best practices, and online safety.">
+    <meta name="twitter:image" content="https://passwordscan.vercel.app/assets/og-image.jpg">
+
+    <!-- Fonts & Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔐</text></svg>">
+
+    <!-- JSON-LD: CollectionPage -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Password Security Blog",
+    "url": "https://passwordscan.vercel.app/blog/",
+    "description": "Expert password security guides covering best practices, common mistakes, strong password creation, and password manager safety.",
+    "isPartOf": { "@type": "WebSite", "name": "PasswordScan", "url": "https://passwordscan.vercel.app/" },
+    "hasPart": [
+      { "@type": "Article", "headline": "How to Create a Strong Password in 2025", "url": "https://passwordscan.vercel.app/blog/how-to-create-strong-password/" },
+      { "@type": "Article", "headline": "Password Security Best Practices 2025", "url": "https://passwordscan.vercel.app/blog/password-security-best-practices/" },
+      { "@type": "Article", "headline": "10 Common Password Mistakes You're Making in 2025", "url": "https://passwordscan.vercel.app/blog/common-password-mistakes/" },
+      { "@type": "Article", "headline": "Is a Password Manager Safe? Complete 2025 Guide", "url": "https://passwordscan.vercel.app/blog/is-password-manager-safe/" }
+    ]
+  }
+  </script>
+
+    <style>
+        /* ── BLOG LISTING PAGE STYLES ── */
+        .blog-hero {
+            background: linear-gradient(135deg, #f0f7ff 0%, #fafbff 60%, #f5f3ff 100%);
+            border-bottom: 1px solid var(--clr-border);
+            padding: var(--space-16) 0 var(--space-12);
+            text-align: center;
+        }
+
+        .blog-hero .section-label {
+            margin-bottom: var(--space-4);
+        }
+
+        .blog-hero h1 {
+            font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
+            font-weight: 800;
+            letter-spacing: -.03em;
+            margin-bottom: var(--space-4);
+            line-height: 1.15;
+        }
+
+        .blog-hero p {
+            font-size: var(--text-lg);
+            color: var(--clr-text-secondary);
+            max-width: 540px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* ── POST GRID ── */
+        .blog-grid-section {
+            padding: var(--space-16) 0;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--space-6);
+        }
+
+        /* ── POST CARD ── */
+        .post-card {
+            background: var(--clr-surface);
+            border: 1px solid var(--clr-border);
+            border-radius: var(--radius-xl);
+            padding: var(--space-6);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
+            text-decoration: none;
+            color: inherit;
+            transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .post-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--clr-primary);
+        }
+
+        .post-card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: var(--space-3);
+        }
+
+        .post-tag {
+            font-size: var(--text-xs);
+            font-weight: 700;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 99px;
+            background: var(--clr-primary-light);
+            color: var(--clr-primary-dark);
+        }
+
+        .post-card-icon {
+            font-size: 28px;
+            line-height: 1;
+        }
+
+        .post-card-title {
+            font-size: var(--text-lg);
+            font-weight: 700;
+            color: var(--clr-text-primary);
+            line-height: 1.35;
+            letter-spacing: -.01em;
+        }
+
+        .post-card-excerpt {
+            font-size: var(--text-sm);
+            color: var(--clr-text-secondary);
+            line-height: 1.7;
+            flex: 1;
+        }
+
+        .post-card-meta {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            font-size: var(--text-xs);
+            color: var(--clr-text-muted, #9ca3af);
+        }
+
+        .post-card-meta span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .post-card-cta {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            color: var(--clr-primary);
+            margin-top: auto;
+            padding-top: var(--space-2);
+            border-top: 1px solid var(--clr-border);
+        }
+
+        .post-card:hover .post-card-cta {
+            gap: var(--space-3);
+        }
+
+        .post-card-cta svg {
+            transition: transform var(--transition-fast);
+        }
+
+        .post-card:hover .post-card-cta svg {
+            transform: translateX(3px);
+        }
+
+        /* ── DIVIDER ── */
+        .blog-cta-section {
+            background: linear-gradient(135deg, var(--clr-primary) 0%, #4338ca 100%);
+            padding: var(--space-16) 0;
+            text-align: center;
+            color: #fff;
+        }
+
+        .blog-cta-section h2 {
+            color: #fff;
+            font-size: var(--text-3xl);
+            margin-bottom: var(--space-3);
+        }
+
+        .blog-cta-section p {
+            color: rgba(255, 255, 255, .82);
+            max-width: 480px;
+            margin: 0 auto var(--space-8);
+            line-height: 1.7;
+        }
+
+        @media (max-width: 640px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ── HEADER ──────────────────────────────────────────────── -->
+    <div id="header"></div>
+
+    <main id="main-content">
+
+        <!-- ── HERO ── -->
+        <section class="blog-hero" aria-labelledby="blog-heading">
+            <div class="container">
+                <div class="section-label">📚 Security Knowledge Base</div>
+                <h1 id="blog-heading">
+                    Password Security<br>
+                    <span class="highlight">Tips & Guides</span>
+                </h1>
+                <p>Expert, research-backed guides to help you protect your accounts, understand password security, and
+                    build safer habits online.</p>
+            </div>
+        </section>
+
+        <!-- ── BLOG GRID ── -->
+        <section class="blog-grid-section" aria-labelledby="posts-heading">
+            <div class="container">
+                <h2 id="posts-heading" class="visually-hidden">All Articles</h2>
+                <div class="blog-grid">
+
+                    <!-- Card 1 -->
+                    <a href="/blog/how-to-create-strong-password/" class="post-card">
+                        <div class="post-card-top">
+                            <span class="post-tag">Guide</span>
+                            <span class="post-card-icon" aria-hidden="true">🔑</span>
+                        </div>
+                        <div class="post-card-title">How to Create a Strong Password in 2025</div>
+                        <p class="post-card-excerpt">Learn the exact formula for creating passwords that are both strong
+                            and memorable — without needing to write them down. Includes the passphrase method, dice
+                            method, and more.</p>
+                        <div class="post-card-meta">
+                            <span>📅 Jan 2025</span>
+                            <span>⏱ 7 min read</span>
+                        </div>
+                        <div class="post-card-cta">
+                            Read guide
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                stroke-linejoin="round" aria-hidden="true">
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                                <polyline points="12 5 19 12 12 19" />
+                            </svg>
+                        </div>
+                    </a>
+
+                    <!-- Card 2 -->
+                    <a href="/blog/password-security-best-practices/" class="post-card">
+                        <div class="post-card-top">
+                            <span class="post-tag">Best Practices</span>
+                            <span class="post-card-icon" aria-hidden="true">🛡️</span>
+                        </div>
+                        <div class="post-card-title">Password Security Best Practices for 2025</div>
+                        <p class="post-card-excerpt">A comprehensive security checklist covering unique passwords,
+                            two-factor authentication, breach monitoring, and everything else you need to fully protect
+                            your accounts.</p>
+                        <div class="post-card-meta">
+                            <span>📅 Feb 2025</span>
+                            <span>⏱ 9 min read</span>
+                        </div>
+                        <div class="post-card-cta">
+                            Read guide
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                stroke-linejoin="round" aria-hidden="true">
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                                <polyline points="12 5 19 12 12 19" />
+                            </svg>
+                        </div>
+                    </a>
+
+                    <!-- Card 3 -->
+                    <a href="/blog/common-password-mistakes/" class="post-card">
+                        <div class="post-card-top">
+                            <span class="post-tag">Mistakes</span>
+                            <span class="post-card-icon" aria-hidden="true">⚠️</span>
+                        </div>
+                        <div class="post-card-title">10 Common Password Mistakes You're Making in 2025</div>
+                        <p class="post-card-excerpt">From "123456" to password reuse — discover the most dangerous
+                            password habits that put your accounts at risk, and exactly how to fix each one.</p>
+                        <div class="post-card-meta">
+                            <span>📅 Mar 2025</span>
+                            <span>⏱ 8 min read</span>
+                        </div>
+                        <div class="post-card-cta">
+                            Read guide
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                stroke-linejoin="round" aria-hidden="true">
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                                <polyline points="12 5 19 12 12 19" />
+                            </svg>
+                        </div>
+                    </a>
+
+                    <!-- Card 4 -->
+                    <a href="/blog/is-password-manager-safe/" class="post-card">
+                        <div class="post-card-top">
+                            <span class="post-tag">Tools</span>
+                            <span class="post-card-icon" aria-hidden="true">🗝️</span>
+                        </div>
+                        <div class="post-card-title">Is a Password Manager Safe? Complete 2025 Guide</div>
+                        <p class="post-card-excerpt">Everything you need to know about how password managers work,
+                            whether they're truly safe to use, and which ones are the most trustworthy options available
+                            today.</p>
+                        <div class="post-card-meta">
+                            <span>📅 Apr 2025</span>
+                            <span>⏱ 10 min read</span>
+                        </div>
+                        <div class="post-card-cta">
+                            Read guide
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                stroke-linejoin="round" aria-hidden="true">
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                                <polyline points="12 5 19 12 12 19" />
+                            </svg>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ── TOOL CTA ── -->
+        <section class="blog-cta-section" aria-label="Try the password checker">
+            <div class="container">
+                <h2>Put Your Knowledge to Work</h2>
+                <p>Apply what you've learned — test your passwords right now with our free, 100% private strength
+                    checker.</p>
+                <a href="/#tool-section" class="btn btn-white btn-lg">Check Your Password Strength →</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ── FOOTER ──────────────────────────────────────────────── -->
+    <div id="footer"></div>
+
+    <script src="/js/components-loader.js"></script>
+
+    <script type="module" src="../js/ui-controller.js"></script>
+</body>
+
+</html>

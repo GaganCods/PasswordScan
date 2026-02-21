@@ -1,0 +1,242 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About PasswordScan – Privacy-First Password Strength Checker</title>
+    <meta name="description"
+        content="Learn how PasswordScan works, why client-side password checking is safer, and why we never store your data. Built for privacy and transparency.">
+    <link rel="canonical" href="https://passwordscan.vercel.app/about/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://passwordscan.vercel.app/about/">
+    <meta property="og:title" content="About PasswordScan – Privacy-First Password Strength Checker">
+    <meta property="og:description"
+        content="Learn how PasswordScan works, why client-side password checking is safer, and why we never store your data.">
+    <meta property="og:image" content="https://passwordscan.vercel.app/assets/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About PasswordScan – How It Works">
+    <meta name="twitter:description"
+        content="Privacy-first password strength checker. 100% client-side. No data stored.">
+    <meta name="twitter:image" content="https://passwordscan.vercel.app/assets/og-image.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔐</text></svg>">
+
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "About PasswordScan",
+    "url": "https://passwordscan.vercel.app/about/",
+    "description": "Learn how PasswordScan works and why client-side password checking protects your privacy.",
+    "isPartOf": { "@type": "WebSite", "name": "PasswordScan", "url": "https://passwordscan.vercel.app/" }
+  }
+  </script>
+</head>
+
+<body>
+
+    <div id="header"></div>
+
+    <main id="main-content">
+
+        <!-- Hero -->
+        <section class="hero" style="padding-block:var(--space-16) var(--space-12)" aria-labelledby="about-heading">
+            <div class="container">
+                <div class="hero-badge"><span aria-hidden="true">🛡️</span> Privacy-First Tool</div>
+                <h1 id="about-heading">About PasswordScan</h1>
+                <p class="hero-subtitle">We built PasswordScan because most online password checkers send your
+                    password to a server. We think that's wrong. Here's how we do it differently.</p>
+            </div>
+        </section>
+
+        <!-- Stats -->
+        <section class="section-sm" style="background:var(--clr-surface);border-bottom:1px solid var(--clr-border)">
+            <div class="container">
+                <div class="stat-grid" style="max-width:640px;margin-inline:auto">
+                    <div class="stat-card">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Passwords ever stored or transmitted</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">150+</div>
+                        <div class="stat-label">Common passwords checked against</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">8</div>
+                        <div class="stat-label">Security factors analyzed per password</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">MIT</div>
+                        <div class="stat-label">Open source license — fully transparent</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Client-Side -->
+        <section class="section" aria-labelledby="why-heading">
+            <div class="container">
+                <div class="about-grid">
+                    <div>
+                        <div class="section-label">Why It Matters</div>
+                        <h2 id="why-heading" class="section-title" style="font-size:var(--text-3xl)">Why client-side
+                            security is safer</h2>
+                        <p style="color:var(--clr-text-secondary);line-height:1.8;margin-bottom:var(--space-6)">
+                            Most password checkers work by sending your password to a remote server for analysis. This
+                            means your password passes over the internet, potentially through third-party
+                            infrastructure, and is logged in server access logs — even if "just for a moment."
+                        </p>
+                        <p style="color:var(--clr-text-secondary);line-height:1.8;margin-bottom:var(--space-6)">
+                            PasswordScan works entirely differently. Our JavaScript engine runs <strong>inside your
+                                browser</strong>. Your password is never serialized into a network request. It never
+                            touches our infrastructure. It disappears the moment you close the tab.
+                        </p>
+                        <a href="/" class="btn btn-primary">Try the Tool →</a>
+                    </div>
+                    <div class="trust-list">
+                        <div class="trust-item">
+                            <div class="trust-icon" aria-hidden="true">🔒</div>
+                            <div class="trust-content">
+                                <h3>Zero Data Transmission</h3>
+                                <p>Your password is processed by JavaScript in your browser's memory only. No network
+                                    requests are made with your password data.</p>
+                            </div>
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-icon" aria-hidden="true">🗄️</div>
+                            <div class="trust-content">
+                                <h3>No Database, No Logs</h3>
+                                <p>We have no backend server that stores passwords or analysis results. There is no
+                                    database to breach.</p>
+                            </div>
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-icon" aria-hidden="true">📖</div>
+                            <div class="trust-content">
+                                <h3>Open Source Code</h3>
+                                <p>Our code is released under the MIT license. Anyone can read, audit, or fork it.
+                                    Transparency is a feature, not an afterthought.</p>
+                            </div>
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-icon" aria-hidden="true">📵</div>
+                            <div class="trust-content">
+                                <h3>Works Offline</h3>
+                                <p>Because everything runs locally, PasswordScan works without an internet connection
+                                    after the initial page load.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How Scoring Works -->
+        <section class="section" style="background:var(--clr-bg)" aria-labelledby="scoring-heading">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-label">Algorithm</div>
+                    <h2 class="section-title" id="scoring-heading">How the scoring works</h2>
+                    <p class="section-desc">Our engine checks 8 distinct factors to produce a score from 0 to 100.</p>
+                </div>
+
+                <div class="steps-list" style="max-width:720px;margin-inline:auto">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Length Analysis</h4>
+                            <p>Longer passwords are exponentially harder to crack. We award up to 20 points for length,
+                                with bonus points at 16+ and 20+ characters.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Character Variety</h4>
+                            <p>Using uppercase letters, lowercase letters, numbers, and symbols expands the "search
+                                space" an attacker must check. Each category adds points.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Entropy Calculation</h4>
+                            <p>We calculate the mathematical entropy (bits of randomness) using the formula: length ×
+                                log₂(charset size). Higher entropy = harder to crack.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Common Password Check</h4>
+                            <p>We check against a dictionary of 150+ most commonly used passwords. If your password
+                                matches, the score immediately drops to 0.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Sequential Pattern Detection</h4>
+                            <p>Patterns like "abc", "123", or "xyz" are trivially easy to guess. We detect these across
+                                alphabets, number sequences, and keyboard layouts.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">6</div>
+                        <div class="step-content">
+                            <h4>Keyboard Pattern Detection</h4>
+                            <p>Keyboard walks like "qwerty", "asdfgh", or "zxcvbn" appear in every attacker's
+                                dictionary. We penalize these patterns heavily.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">7</div>
+                        <div class="step-content">
+                            <h4>Repetition Penalty</h4>
+                            <p>Repeated characters like "aaa" or "111" reduce entropy significantly. We detect character
+                                runs and high character-frequency ratios.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">8</div>
+                        <div class="step-content">
+                            <h4>Crack Time Estimation</h4>
+                            <p>Based on the entropy, we estimate how long it would take a modern GPU cluster making 10
+                                billion guesses per second to crack the password.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- License + CTA -->
+        <section class="cta-section section">
+            <div class="container" style="text-align:center">
+                <p class="section-label" style="color:rgba(255,255,255,.7)">Open Source</p>
+                <h2 class="section-title" style="color:#fff;margin-bottom:var(--space-3)">Released under the MIT License
+                </h2>
+                <p class="section-desc" style="color:rgba(255,255,255,.8);margin-bottom:var(--space-8)">PasswordScan
+                    is free and open source. Read the code, fork it, build on it. <a href="/license/"
+                        style="color:#fff;text-decoration:underline">View the full MIT license →</a></p>
+                <a href="/" class="btn btn-white btn-lg">Check Your PasswordScan</a>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="/js/components-loader.js"></script>
+
+    <script type="module" src="../js/ui-controller.js"></script>
+</body>
+
+</html>
