@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <img src="https://via.placeholder.com/800x400?text=PasswordScan+Hero+Image" alt="PasswordScan Hero" width="800">
+  <img src="/screenshots/passwordscan-hero.png" alt="PasswordScan Hero" width="800">
 </p>
 
 <p align="center">
@@ -47,12 +47,12 @@ Check out the live application here: [PasswordScan Demo](https://passwordscan.ve
 
 <div align="center">
   <h3>Desktop View</h3>
-  <img src="https://via.placeholder.com/800x450?text=Desktop+Screenshot" alt="Desktop Screenshot" width="700">
+  <img src="/screenshots/passwordscan-desktop.png" alt="Desktop Screenshot" width="700">
   
   <br><br>
   
   <h3>Mobile View</h3>
-  <img src="https://via.placeholder.com/300x600?text=Mobile+Screenshot" alt="Mobile Screenshot" width="250">
+  <img src="/screenshots/passwordscan-mobile.png" alt="Mobile Screenshot" width="250">
 </div>
 
 ---
@@ -95,7 +95,7 @@ To run PasswordScan locally on your machine, follow these simple steps:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/password-scan.git
+   git clone https://github.com/GaganCods/password-scan.git
    ```
 
 2. **Navigate to the project directory:**
@@ -128,5 +128,5 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 ---
 
 <p align="center">
-  Built with ❤️ for a more secure web.
+  Built with ❤️ by [Gagan Pratap](https://linkedin.com/in/gagan-pratap).
 </p>
